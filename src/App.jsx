@@ -98,7 +98,7 @@ export default function App() {
     <div className="app-shell">
       <header className="app-header">
         <a className="brand" href="#earth">
-          <img src="/favicon.svg" alt="" />
+          <img src="/icon.svg" alt="" width="40" height="40" />
           <span>World Dashboard</span>
         </a>
         <div className="header-right">
