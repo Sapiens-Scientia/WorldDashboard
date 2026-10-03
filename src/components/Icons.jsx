@@ -1,0 +1,48 @@
+import {
+  Activity,
+  ArrowLeftRight,
+  Building2,
+  BriefcaseBusiness,
+  ChartNoAxesCombined,
+  Cloud,
+  Coins,
+  Droplets,
+  Flag,
+  Globe,
+  Heart,
+  Leaf,
+  Lightbulb,
+  PersonStanding,
+  Snowflake,
+  Swords,
+  Thermometer,
+  UsersRound,
+  Waves,
+  Wifi,
+} from "lucide-react";
+const icons = {
+  Activity,
+  ArrowLeftRight,
+  Building2,
+  BriefcaseBusiness,
+  ChartNoAxesCombined,
+  Cloud,
+  Coins,
+  Droplets,
+  Flag,
+  Globe,
+  Heart,
+  Leaf,
+  Lightbulb,
+  PersonStanding,
+  Snowflake,
+  Swords,
+  Thermometer,
+  UsersRound,
+  Waves,
+  Wifi,
+};
+export default function MetricIcon({ name, ...props }) {
+  const Icon = icons[name] || Globe;
+  return <Icon size={22} strokeWidth={1.5} aria-hidden="true" {...props} />;
+}

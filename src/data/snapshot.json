@@ -1,0 +1,623 @@
+{
+  "observations": {
+    "gdp": {
+      "value": 118350166039396,
+      "period": "2025",
+      "history": [
+        {
+          "year": "2021",
+          "value": 98780038374127
+        },
+        {
+          "year": "2022",
+          "value": 102862471365575
+        },
+        {
+          "year": "2023",
+          "value": 107348614073350
+        },
+        {
+          "year": "2024",
+          "value": 111669432109121
+        },
+        {
+          "year": "2025",
+          "value": 118350166039396
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.863Z",
+      "status": "checked"
+    },
+    "growth": {
+      "value": 2.92127318539153,
+      "period": "2025",
+      "history": [
+        {
+          "year": "2021",
+          "value": 6.48508887596752
+        },
+        {
+          "year": "2022",
+          "value": 3.44001097265647
+        },
+        {
+          "year": "2023",
+          "value": 2.85938493335973
+        },
+        {
+          "year": "2024",
+          "value": 2.90001340156714
+        },
+        {
+          "year": "2025",
+          "value": 2.92127318539153
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.867Z",
+      "status": "checked"
+    },
+    "inflation": {
+      "value": 3.0414132155654,
+      "period": "2025",
+      "history": [
+        {
+          "year": "2021",
+          "value": 3.47540320289875
+        },
+        {
+          "year": "2022",
+          "value": 8.08169507021982
+        },
+        {
+          "year": "2023",
+          "value": 5.79944107391962
+        },
+        {
+          "year": "2024",
+          "value": 3.01447576977999
+        },
+        {
+          "year": "2025",
+          "value": 3.0414132155654
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.882Z",
+      "status": "checked"
+    },
+    "unemployment": {
+      "value": 4.7913330740211,
+      "period": "2025",
+      "history": [
+        {
+          "year": "2021",
+          "value": 6.04556088000376
+        },
+        {
+          "year": "2022",
+          "value": 5.23462796913747
+        },
+        {
+          "year": "2023",
+          "value": 4.84991713588619
+        },
+        {
+          "year": "2024",
+          "value": 4.80627976615483
+        },
+        {
+          "year": "2025",
+          "value": 4.7913330740211
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.862Z",
+      "status": "checked"
+    },
+    "population": {
+      "value": 8215424893,
+      "period": "2025",
+      "history": [
+        {
+          "year": "2021",
+          "value": 7919567995
+        },
+        {
+          "year": "2022",
+          "value": 7988550201
+        },
+        {
+          "year": "2023",
+          "value": 8062923417
+        },
+        {
+          "year": "2024",
+          "value": 8140897523
+        },
+        {
+          "year": "2025",
+          "value": 8215424893
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.862Z",
+      "status": "checked"
+    },
+    "lifespan": {
+      "value": 73.4818184164654,
+      "period": "2024",
+      "history": [
+        {
+          "year": "2021",
+          "value": 71.2160780260296
+        },
+        {
+          "year": "2022",
+          "value": 72.9689585478052
+        },
+        {
+          "year": "2023",
+          "value": 73.3302230276374
+        },
+        {
+          "year": "2024",
+          "value": 73.4818184164654
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.872Z",
+      "status": "checked"
+    },
+    "electricity": {
+      "value": 91.9264843853681,
+      "period": "2024",
+      "history": [
+        {
+          "year": "2021",
+          "value": 91.3385144099012
+        },
+        {
+          "year": "2022",
+          "value": 91.2817736699915
+        },
+        {
+          "year": "2023",
+          "value": 91.6034762480239
+        },
+        {
+          "year": "2024",
+          "value": 91.9264843853681
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.879Z",
+      "status": "checked"
+    },
+    "internet": {
+      "value": 73.6,
+      "period": "2025",
+      "history": [
+        {
+          "year": "2021",
+          "value": 63.8
+        },
+        {
+          "year": "2022",
+          "value": 67
+        },
+        {
+          "year": "2023",
+          "value": 69.2
+        },
+        {
+          "year": "2024",
+          "value": 71.2
+        },
+        {
+          "year": "2025",
+          "value": 73.6
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.897Z",
+      "status": "checked"
+    },
+    "temperature": {
+      "value": 1.43,
+      "period": "2025",
+      "status": "snapshot"
+    },
+    "co2": {
+      "value": 427.62,
+      "period": "2026-06",
+      "history": [
+        {
+          "year": "2024-07",
+          "value": 421.61
+        },
+        {
+          "year": "2024-08",
+          "value": 420.27
+        },
+        {
+          "year": "2024-09",
+          "value": 420.59
+        },
+        {
+          "year": "2024-10",
+          "value": 422.33
+        },
+        {
+          "year": "2024-11",
+          "value": 424.07
+        },
+        {
+          "year": "2024-12",
+          "value": 425.2
+        },
+        {
+          "year": "2025-01",
+          "value": 426.01
+        },
+        {
+          "year": "2025-02",
+          "value": 426.46
+        },
+        {
+          "year": "2025-03",
+          "value": 426.66
+        },
+        {
+          "year": "2025-04",
+          "value": 427.03
+        },
+        {
+          "year": "2025-05",
+          "value": 427.04
+        },
+        {
+          "year": "2025-06",
+          "value": 425.9
+        },
+        {
+          "year": "2025-07",
+          "value": 424.09
+        },
+        {
+          "year": "2025-08",
+          "value": 422.86
+        },
+        {
+          "year": "2025-09",
+          "value": 423.06
+        },
+        {
+          "year": "2025-10",
+          "value": 424.66
+        },
+        {
+          "year": "2025-11",
+          "value": 426.39
+        },
+        {
+          "year": "2025-12",
+          "value": 427.31
+        },
+        {
+          "year": "2026-01",
+          "value": 428.02
+        },
+        {
+          "year": "2026-02",
+          "value": 428.44
+        },
+        {
+          "year": "2026-03",
+          "value": 428.48
+        },
+        {
+          "year": "2026-04",
+          "value": 428.67
+        },
+        {
+          "year": "2026-05",
+          "value": 428.59
+        },
+        {
+          "year": "2026-06",
+          "value": 427.62
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:59.123Z",
+      "status": "checked"
+    },
+    "sea": {
+      "value": 4.1,
+      "period": "2016–2025",
+      "status": "snapshot"
+    },
+    "ice": {
+      "value": 4.6,
+      "period": "Sep 2026",
+      "status": "snapshot"
+    },
+    "nations": {
+      "value": 193,
+      "period": "Oct 2026",
+      "status": "snapshot"
+    },
+    "conflicts": {
+      "value": 65,
+      "period": "2025",
+      "status": "snapshot"
+    },
+    "displaced": {
+      "value": 117800000,
+      "period": "2025",
+      "status": "snapshot"
+    },
+    "renewables": {
+      "value": 5149,
+      "period": "2025",
+      "status": "snapshot"
+    },
+    "quakes": {
+      "value": 15,
+      "period": "Past 24 hours",
+      "points": [
+        {
+          "lat": -27.4948,
+          "lon": -179.4827,
+          "magnitude": 4.5,
+          "label": "Kermadec Islands region",
+          "time": 1791035471299
+        },
+        {
+          "lat": 29.221,
+          "lon": 130.6125,
+          "magnitude": 4.8,
+          "label": "112 km S of Koshima, Japan",
+          "time": 1791007521157
+        },
+        {
+          "lat": 52.0836,
+          "lon": 160.4217,
+          "magnitude": 5,
+          "label": "163 km SE of Petropavlovsk-Kamchatsky, Russia",
+          "time": 1790996346296
+        },
+        {
+          "lat": 31.2953,
+          "lon": 130.6093,
+          "magnitude": 4.5,
+          "label": "7 km NNW of Ibusuki, Japan",
+          "time": 1790986298239
+        },
+        {
+          "lat": 51.9749,
+          "lon": 159.2731,
+          "magnitude": 4.8,
+          "label": "121 km SSE of Vilyuchinsk, Russia",
+          "time": 1790985698784
+        },
+        {
+          "lat": 51.5846,
+          "lon": 159.7182,
+          "magnitude": 4.6,
+          "label": "174 km SSE of Vilyuchinsk, Russia",
+          "time": 1790985566824
+        },
+        {
+          "lat": 51.7161,
+          "lon": 159.4679,
+          "magnitude": 4.7,
+          "label": "153 km SSE of Vilyuchinsk, Russia",
+          "time": 1790985253503
+        },
+        {
+          "lat": 51.6886,
+          "lon": 159.8843,
+          "magnitude": 5,
+          "label": "171 km SE of Vilyuchinsk, Russia",
+          "time": 1790974455391
+        },
+        {
+          "lat": 52.4691,
+          "lon": 158.2168,
+          "magnitude": 4.7,
+          "label": "52 km SSW of Vilyuchinsk, Russia",
+          "time": 1790973501109
+        },
+        {
+          "lat": 52.5605,
+          "lon": 158.0496,
+          "magnitude": 4.6,
+          "label": "46 km SSW of Paratunka, Russia",
+          "time": 1790973468318
+        },
+        {
+          "lat": 40.0341,
+          "lon": 142.8232,
+          "magnitude": 4.5,
+          "label": "86 km E of Noda, Japan",
+          "time": 1790973296862
+        },
+        {
+          "lat": 51.3149,
+          "lon": 159.665,
+          "magnitude": 5.1,
+          "label": "199 km SSE of Vilyuchinsk, Russia",
+          "time": 1790972847120
+        },
+        {
+          "lat": -4.565,
+          "lon": 152.8363,
+          "magnitude": 4.6,
+          "label": "67 km ESE of Kokopo, Papua New Guinea",
+          "time": 1790972762878
+        },
+        {
+          "lat": 51.862,
+          "lon": 159.3971,
+          "magnitude": 4.9,
+          "label": "136 km SSE of Vilyuchinsk, Russia",
+          "time": 1790972729894
+        },
+        {
+          "lat": 51.5775,
+          "lon": 159.8307,
+          "magnitude": 5,
+          "label": "179 km SSE of Vilyuchinsk, Russia",
+          "time": 1790965520940
+        }
+      ],
+      "generatedAt": "2026-10-03T17:02:00.000Z",
+      "checkedAt": "2026-10-03T17:02:58.876Z",
+      "status": "checked"
+    },
+    "trade": {
+      "value": 68.4920790757033,
+      "period": "2025",
+      "history": [
+        {
+          "year": "2021",
+          "value": 56.498994335193
+        },
+        {
+          "year": "2022",
+          "value": 62.1470721214396
+        },
+        {
+          "year": "2023",
+          "value": 58.0658951471515
+        },
+        {
+          "year": "2024",
+          "value": 56.7228465365692
+        },
+        {
+          "year": "2025",
+          "value": 68.4920790757033
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.858Z",
+      "status": "checked"
+    },
+    "urban": {
+      "value": 57.8251158115221,
+      "period": "2025",
+      "history": [
+        {
+          "year": "2021",
+          "value": 56.80922270108
+        },
+        {
+          "year": "2022",
+          "value": 57.0722541398634
+        },
+        {
+          "year": "2023",
+          "value": 57.3116916082902
+        },
+        {
+          "year": "2024",
+          "value": 57.565600293551
+        },
+        {
+          "year": "2025",
+          "value": 57.8251158115221
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.862Z",
+      "status": "checked"
+    },
+    "water": {
+      "value": 73.6686144265244,
+      "period": "2024",
+      "history": [
+        {
+          "year": "2021",
+          "value": 70.9952769597765
+        },
+        {
+          "year": "2022",
+          "value": 71.5080020640923
+        },
+        {
+          "year": "2023",
+          "value": 71.9907403245118
+        },
+        {
+          "year": "2024",
+          "value": 73.6686144265244
+        }
+      ],
+      "checkedAt": "2026-10-03T17:02:58.888Z",
+      "status": "checked"
+    }
+  },
+  "sources": [
+    {
+      "id": "trade",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "urban",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "population",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "unemployment",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "gdp",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "growth",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "lifespan",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "quakes",
+      "provider": "USGS",
+      "ok": true
+    },
+    {
+      "id": "electricity",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "inflation",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "water",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "internet",
+      "provider": "World Bank",
+      "ok": true
+    },
+    {
+      "id": "co2",
+      "provider": "NOAA",
+      "ok": true
+    }
+  ],
+  "checkedAt": "2026-10-03T17:02:59.123Z",
+  "snapshotDate": "2026-10-03",
+  "referenceReviewed": "2026-10-03"
+}

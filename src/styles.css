@@ -1,0 +1,2184 @@
+@font-face {
+  font-family: Inter;
+  src: url("/inter-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url("/inter-medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: Inter;
+  src: url("/inter-semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+:root {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #17262c;
+  background: #fff;
+  font-synthesis: none;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  --muted: #6a797e;
+  --rule: #dce4e5;
+  --teal: #2c7480;
+  --light: #edf5f5;
+  --serif: Georgia, "Times New Roman", serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 320px;
+}
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 4px;
+}
+a {
+  color: var(--teal);
+  text-underline-offset: 3px;
+}
+button {
+  touch-action: manipulation;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+button svg,
+a svg {
+  flex-shrink: 0;
+}
+svg {
+  vertical-align: middle;
+}
+button {
+  background: none;
+}
+.app-shell {
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 36px;
+}
+.app-header {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--rule);
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: #13212a;
+}
+.brand img {
+  width: 42px;
+  height: 42px;
+}
+.brand span {
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 600;
+  letter-spacing: -1.1px;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.header-right time {
+  font-size: 12px;
+  color: #40505a;
+}
+.today-button {
+  background: var(--teal);
+  color: white;
+  border: 1px solid var(--teal);
+  border-radius: 5px;
+  min-height: 35px;
+  padding: 7px 24px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.today-button:hover {
+  background: #245d67;
+}
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+}
+.icon-button:hover {
+  background: var(--light);
+}
+.refresh-button {
+  color: var(--muted);
+  margin-left: 0;
+}
+.spin {
+  animation: spin 1.2s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.overview-top {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 26px;
+  align-items: center;
+  padding: 27px 0 13px;
+}
+.earth-title h1 {
+  font-family: var(--serif);
+  font-size: 45px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1.8px;
+  white-space: nowrap;
+}
+.earth-title p {
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 9px;
+  color: var(--muted);
+}
+.economy-metrics,
+.infrastructure-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  min-width: 0;
+}
+.metric {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+  border: 0;
+  border-radius: 5px;
+  text-align: left;
+  padding: 12px 12px 12px 3px;
+  transition: background 0.18s;
+  min-width: 0;
+  width: 100%;
+}
+.metric:hover {
+  background: #f5f8f8;
+}
+.metric.is-selected {
+  background: #e8f2f3;
+  box-shadow: inset 2px 0 var(--teal);
+}
+.metric-icon {
+  display: inline-flex;
+  justify-content: center;
+  width: 34px;
+  flex: 0 0 34px;
+  padding-top: 4px;
+  color: #37515b;
+}
+.metric-icon svg {
+  width: 26px;
+  height: 26px;
+}
+.metric-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.metric-label {
+  font-size: 11px;
+  line-height: 1.4;
+  color: #394c55;
+  font-weight: 500;
+}
+.metric-value {
+  font-size: 25px;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  margin: 3px 0;
+  white-space: nowrap;
+}
+.metric-unit {
+  font-size: 15px;
+  letter-spacing: -0.25px;
+  margin-left: 5px;
+  font-weight: 400;
+}
+.metric-unit:empty {
+  margin: 0;
+}
+.metric-description,
+.metric-source {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.metric-open {
+  position: absolute;
+  right: 6px;
+  top: 13px;
+  color: var(--teal);
+  opacity: 0;
+}
+.metric:hover .metric-open,
+.metric.is-selected .metric-open {
+  opacity: 1;
+}
+.metric-compact {
+  padding: 0 13px;
+  border-radius: 0;
+  gap: 10px;
+  border-left: 1px solid var(--rule);
+}
+.metric-compact .metric-icon {
+  width: 22px;
+  flex-basis: 22px;
+  padding-top: 2px;
+}
+.metric-compact .metric-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.metric-compact .metric-value {
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 2px 0;
+}
+.metric-compact .metric-unit {
+  font-size: 12px;
+  display: inline-block;
+}
+.metric-compact .metric-description {
+  display: none;
+}
+.metric-compact .metric-label {
+  font-size: 10px;
+  white-space: nowrap;
+}
+.metric-compact .metric-source {
+  font-size: 9px;
+}
+.metric-compact .metric-open {
+  top: 1px;
+  right: 2px;
+}
+.earth-layout {
+  display: grid;
+  grid-template-columns: 245px minmax(0, 1fr) 245px;
+  column-gap: 16px;
+  align-items: start;
+  min-height: 462px;
+}
+.column-heading {
+  font:
+    500 10px Inter,
+    sans-serif;
+  letter-spacing: 1.35px;
+  text-transform: uppercase;
+  color: #7a898e;
+  margin: 10px 0 9px;
+  padding-left: 54px;
+}
+.metric-column {
+  padding: 7px 0 0;
+  display: grid;
+  grid-template-rows: 28px repeat(5, minmax(80px, auto));
+  align-content: start;
+}
+.geopolitics .metric {
+  padding-left: 11px;
+}
+.geopolitics .column-heading {
+  padding-left: 63px;
+}
+.globe-panel {
+  position: relative;
+  min-width: 0;
+  text-align: center;
+}
+.globe-visual {
+  height: 407px;
+  position: relative;
+}
+.globe-canvas,
+.solar-canvas {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  touch-action: pan-y;
+}
+.globe-canvas canvas,
+.solar-canvas canvas {
+  display: block;
+  touch-action: pan-y !important;
+  cursor: grab;
+}
+.globe-canvas canvas:active,
+.solar-canvas canvas:active {
+  cursor: grabbing;
+}
+.scene-labels {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.scene-label {
+  position: absolute;
+  padding: 3px 6px;
+  color: #2e7480;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 3px;
+  font-size: 9px;
+  line-height: 1.35;
+  white-space: nowrap;
+  transform: translate(18px, -50%);
+  box-shadow: 0 1px 6px #ffffff70;
+}
+.scene-label::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  width: 18px;
+  height: 1px;
+  background: #63a1ac;
+}
+.selected-label {
+  color: #23616b;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: normal;
+  width: max-content;
+  max-width: 170px;
+  border: 1px solid #d1e7eb;
+  padding: 6px 9px;
+  transform: translate(22px, -50%);
+}
+.globe-north {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  color: #94a5ab;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
+.globe-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0 0 14px;
+}
+.control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 31px;
+  padding: 6px 14px;
+  border: 1px solid #d7e0e2;
+  border-radius: 5px;
+  font-size: 10px;
+  line-height: 1.3;
+  background: #fff;
+  white-space: nowrap;
+}
+.control:hover {
+  border-color: #9bbbbf;
+  background: #f5fafa;
+}
+.control.active {
+  border-color: #badbdf;
+  background: #e4f1f2;
+  color: #235d68;
+}
+.globe-controls .control {
+  border-radius: 18px;
+  padding-left: 17px;
+  padding-right: 17px;
+}
+.globe-hint {
+  font-size: 9px;
+  color: #7d8c90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+.globe-hint span {
+  color: #abb9bb;
+  margin: 0 1px;
+}
+.infrastructure-wrap {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  align-items: center;
+  padding: 22px 0 17px;
+}
+.infrastructure-heading {
+  font-size: 12px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--muted);
+}
+.infrastructure-metrics .metric-compact {
+  padding: 1px 22px;
+  gap: 11px;
+}
+.data-status {
+  font-size: 9px;
+  color: #7d8a8e;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 0 18px;
+}
+.status-dot {
+  width: 5px;
+  height: 5px;
+  background: #599487;
+  border-radius: 100%;
+}
+.status-dot.muted {
+  background: #b49b6c;
+}
+.data-status .text-button {
+  margin-left: auto;
+  font-size: 10px;
+}
+.text-button {
+  border: 0;
+  color: var(--teal);
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 0;
+  background: none;
+}
+.text-button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.strip {
+  border-top: 1px solid var(--rule);
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 22px;
+}
+.section-header h2 {
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 1.25;
+}
+.section-header p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.calendar-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.55fr 1fr;
+  gap: 35px;
+  align-items: center;
+  padding: 14px 0 24px;
+}
+.date-summary h3 {
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.date-summary > p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 6px;
+}
+.date-summary > p span {
+  margin: 0 6px;
+  color: #a9b4b7;
+}
+.year-progress {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 9px;
+  color: #6d7b81;
+  margin: 21px 0;
+}
+.year-progress > div {
+  height: 7px;
+  background: #e0e9eb;
+  border-radius: 20px;
+  flex: 1;
+  overflow: hidden;
+}
+.year-progress > div span {
+  display: block;
+  height: 100%;
+  background: var(--teal);
+  border-radius: 20px;
+}
+.season-list {
+  padding-top: 17px;
+  border-top: 1px solid var(--rule);
+}
+.season-list h4 {
+  font-size: 11px;
+  font-weight: 500;
+  margin-bottom: 9px;
+}
+.season-list button {
+  display: grid;
+  grid-template-columns: 22px 51px 1fr;
+  gap: 7px;
+  align-items: center;
+  font-size: 10px;
+  border: 0;
+  border-radius: 4px;
+  padding: 7px 0;
+  width: 100%;
+  text-align: left;
+  color: #54686d;
+}
+.season-list button:hover,
+.season-list .selected-season {
+  background: var(--light);
+}
+.season-list button:nth-of-type(1) svg {
+  color: #8ca37d;
+}
+.season-list button:nth-of-type(2) svg {
+  color: #cba652;
+}
+.season-list button:nth-of-type(3) svg {
+  color: #ae856d;
+}
+.season-list button:nth-of-type(4) svg {
+  color: #729cae;
+}
+.date-summary .calendar-explainer {
+  font-size: 10px;
+  line-height: 1.65;
+  color: #829096;
+  margin-top: 18px;
+}
+.week-panel {
+  border-left: 1px solid var(--rule);
+  padding: 0 0 0 28px;
+}
+.week-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.week-heading h3 {
+  font-family: var(--serif);
+  font-size: 23px;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+.week-heading > div {
+  display: flex;
+}
+.week-panel > p {
+  font-size: 10px;
+  color: var(--muted);
+  margin: 4px 0 19px;
+  line-height: 1.5;
+}
+.week-list {
+  display: grid;
+  gap: 2px;
+}
+.week-day {
+  display: grid;
+  grid-template-columns: 35px 1fr auto;
+  align-items: center;
+  gap: 9px;
+  min-height: 31px;
+  padding: 5px 8px;
+  border: 0;
+  border-bottom: 1px solid #edf0f1;
+  font-size: 10px;
+  text-align: left;
+  border-radius: 3px;
+  font-variant-numeric: tabular-nums;
+}
+.week-day:hover {
+  background: #f1f7f7;
+}
+.week-day.is-selected {
+  background: #d7ecee;
+  border-color: transparent;
+  color: #174e58;
+  font-weight: 600;
+}
+.today-tag {
+  font-size: 8px;
+  font-weight: 400;
+  padding: 3px 6px;
+  background: var(--teal);
+  color: white;
+  border-radius: 3px;
+}
+.calendar-year-nav {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  gap: 3px;
+  color: #5c767e;
+  font-size: 11px;
+}
+.calendar-year-nav .text-button {
+  margin-left: auto;
+}
+.orbit-stage {
+  min-width: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.orbit-viewport {
+  width: 100%;
+}
+.calendar-canvas {
+  position: relative;
+  container-type: inline-size;
+}
+.calendar {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+.day-cell {
+  stroke: #fff;
+  stroke-width: 1.1;
+  transition: filter 0.15s;
+}
+.day-cell[role="button"] {
+  cursor: pointer;
+}
+.day-cell[role="button"]:hover {
+  filter: brightness(0.9);
+  stroke: #2c7480;
+  stroke-width: 2;
+}
+.day-cell:focus-visible {
+  outline: none;
+  stroke: #163f4c;
+  stroke-width: 3;
+}
+.day-cell.outside {
+  stroke: #e9eeee;
+}
+.day-number {
+  font:
+    9px Inter,
+    sans-serif;
+  text-anchor: middle;
+  fill: #566970;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+.selected-number {
+  fill: #fff;
+  font-weight: 600;
+}
+.month-outline {
+  fill: none;
+  stroke: #a6b8b7;
+  stroke-width: 1;
+  pointer-events: none;
+}
+.month-marker text {
+  font:
+    500 12px Inter,
+    sans-serif;
+  letter-spacing: 1px;
+  fill: #445b64;
+}
+.orbit-week-number {
+  font:
+    8.5px Inter,
+    sans-serif;
+  text-anchor: middle;
+  fill: #839393;
+}
+.orbit-week-number.is-selected {
+  fill: var(--teal);
+  font-weight: 600;
+}
+.season-date-circle {
+  fill: none;
+  stroke: #a87e3d;
+  stroke-width: 1.5;
+  pointer-events: none;
+}
+.season-date-circle.is-selected {
+  stroke: #f4d5a2;
+}
+.season-marker {
+  cursor: pointer;
+}
+.season-marker line {
+  stroke: #bb9656;
+  stroke-width: 1;
+}
+.season-marker text {
+  font:
+    8.5px Inter,
+    sans-serif;
+  text-anchor: middle;
+  fill: #8c784f;
+}
+.season-marker .season-kind {
+  font-size: 7px;
+  letter-spacing: 0.7px;
+}
+.season-hit-area {
+  fill: transparent;
+  stroke: transparent;
+}
+.season-marker:hover .season-hit-area,
+.season-marker:focus-visible .season-hit-area {
+  fill: #c2ad6620;
+  stroke: #baa16d;
+}
+.center-caption {
+  font:
+    italic 18px Georgia,
+    serif;
+  text-anchor: middle;
+  fill: #456168;
+}
+.center-progress {
+  font:
+    10px Inter,
+    sans-serif;
+  text-anchor: middle;
+  fill: #7f9397;
+}
+.center-year-controls {
+  position: absolute;
+  left: 37.1287%;
+  top: 35.7471%;
+  width: 25.7426%;
+  height: 10.1149%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.495cqw;
+}
+.center-year {
+  display: block;
+  font: 6.3366cqw var(--serif);
+  letter-spacing: -0.1485cqw;
+  line-height: 1;
+  color: #284b55;
+}
+.center-year-controls .icon-button {
+  width: 2.3762cqw;
+  height: 3.7624cqw;
+  padding: 0;
+  flex-shrink: 0;
+}
+.center-year-controls .icon-button svg {
+  width: 1.7822cqw;
+  height: 1.7822cqw;
+}
+.center-year-picker {
+  position: relative;
+  width: 16.4356cqw;
+  height: 8.5149cqw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.center-year-picker:hover {
+  background: var(--light);
+}
+.center-year-picker:focus-within {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+.center-year-select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  font:
+    16px Inter,
+    sans-serif;
+}
+.year-picker-chevron {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.98cqw;
+  pointer-events: none;
+  color: #617e82;
+}
+.active-week-outline {
+  fill: none;
+  stroke: #4a8592;
+  stroke-width: 1.7;
+  pointer-events: none;
+}
+.orbit-display-controls {
+  order: 2;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 7px;
+  flex-wrap: wrap;
+}
+.orbit-direction-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  border: 0;
+  border-radius: 4px;
+  font-size: 9px;
+  color: #6c858a;
+  min-height: 26px;
+}
+.orbit-direction-button:hover,
+.orbit-direction-button[aria-pressed="true"].fade-past-control {
+  background: var(--light);
+}
+.orbit-direction-button span {
+  font-size: 15px;
+}
+.past-week {
+  opacity: 0.32;
+}
+.past-week:hover,
+.past-week:focus-within {
+  opacity: 1;
+}
+.orbit-zoom-button {
+  display: none;
+  border: 1px solid var(--rule);
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 11px;
+}
+.keyboard-hint {
+  order: 3;
+  font-size: 8px;
+  color: #8b999c;
+  text-align: center;
+  margin-top: 1px;
+}
+.keyboard-hint span {
+  margin: 0 4px;
+}
+.astronomy-controls {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.solar-visual {
+  position: relative;
+  height: 226px;
+  margin: 0 -10px;
+}
+.body-label {
+  font-size: 10px;
+  font-weight: 500;
+  transform: translate(-50%, -100%);
+  background: #ffffffde;
+  color: #3a6470;
+}
+.body-label::before {
+  display: none;
+}
+.moon-label {
+  font-size: 9px;
+  color: #607278;
+}
+.astronomy-readouts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 0 26px;
+}
+.astronomy-readouts > div {
+  display: flex;
+  gap: 17px;
+  padding: 0 27px;
+  border-left: 1px solid var(--rule);
+  align-items: flex-start;
+}
+.astronomy-readouts > div:first-child {
+  border: 0;
+  padding-left: 35px;
+}
+.astronomy-readouts svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.2;
+  color: #456973;
+  margin-top: 2px;
+}
+.astronomy-readouts span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.astronomy-readouts small {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.astronomy-readouts small:first-child {
+  color: #374f59;
+}
+.astronomy-readouts strong {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.5px;
+  font-variant-numeric: tabular-nums;
+}
+.astronomy-readouts em {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0;
+}
+.astronomy-note {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: #8a969a;
+  font-size: 9px;
+  padding: 0 0 19px;
+  line-height: 1.6;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--rule);
+  padding: 21px 0 25px;
+  color: #7c8d92;
+  font-size: 10px;
+}
+.footer-dot {
+  margin: 0 8px;
+  color: #bac4c6;
+}
+footer .text-button {
+  font-size: 10px;
+}
+.date-exploration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 13px;
+  margin: 8px 0;
+  border-radius: 4px;
+  background: #f2f7f8;
+  color: #496d76;
+  font-size: 11px;
+}
+.date-exploration .text-button {
+  white-space: nowrap;
+}
+.metric-detail {
+  text-align: left;
+  background: #f5f9f9;
+  border: 1px solid #e2eeef;
+  border-radius: 6px;
+  padding: 10px 14px;
+  margin: 10px 0 15px;
+  font-size: 10px;
+  line-height: 1.65;
+  color: #546970;
+}
+.detail-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #2e5b68;
+  margin-bottom: 3px;
+}
+.detail-heading > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.detail-heading strong {
+  font-weight: 500;
+  font-size: 11px;
+}
+.detail-heading .icon-button {
+  width: 23px;
+  height: 23px;
+}
+.metric-detail summary {
+  font-size: 9px;
+  color: #60818a;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.metric-detail details p {
+  margin-top: 7px;
+}
+.detail-source {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 9px;
+  color: #829398;
+}
+.detail-source a {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+}
+.canvas-error {
+  position: absolute;
+  inset: 25% 10%;
+  display: grid;
+  place-items: center;
+  background: #ffffffed;
+  color: #6b7d83;
+  font-size: 13px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  z-index: 2;
+}
+dialog {
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  box-shadow: 0 20px 90px #12344124;
+  color: var(--text);
+  padding: 24px;
+  max-height: 92svh;
+  background: #fff;
+}
+dialog::backdrop {
+  background: #243b4a54;
+  backdrop-filter: blur(5px);
+}
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 15px;
+}
+.dialog-header > span {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-size: 15px;
+}
+.dialog-header h2 {
+  font: 29px var(--serif);
+  letter-spacing: -0.7px;
+}
+.calendar-dialog {
+  width: min(960px, 96vw);
+  overflow: auto;
+}
+.calendar-dialog .orbit-stage {
+  width: min(100%, 850px);
+  margin: auto;
+}
+.calendar-dialog .keyboard-hint {
+  font-size: 10px;
+}
+.calendar-dialog .orbit-direction-button {
+  font-size: 11px;
+}
+.calendar-dialog .orbit-display-controls {
+  margin-top: 10px;
+}
+.dialog-note {
+  font-size: 10px;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--muted);
+  margin: 12px 0 0;
+}
+.sources-dialog {
+  width: min(790px, 95vw);
+  padding: 28px 32px;
+}
+.sources-intro,
+.method-note p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #667a80;
+  margin-bottom: 13px;
+}
+.method-note {
+  background: #f6f9f9;
+  padding: 17px 20px;
+  margin: 20px 0;
+  border-radius: 5px;
+}
+.method-note strong {
+  font-weight: 500;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 7px;
+}
+.method-note a,
+.source-row a {
+  font-size: 11px;
+}
+.source-section h3 {
+  font: 21px var(--serif);
+  margin: 23px 0 8px;
+  color: #315d67;
+}
+.source-row {
+  border-bottom: 1px solid var(--rule);
+  font-size: 11px;
+  padding: 13px 0;
+}
+.source-row summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.source-row summary small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.source-row p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: #667a80;
+  margin: 10px 0;
+}
+.source-row .source-state {
+  font-size: 10px;
+}
+.asset-credits {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #819095;
+  margin-top: 25px;
+}
+@media (min-width: 1500px) {
+  .overview-top {
+    grid-template-columns: 290px 1fr;
+  }
+  .earth-layout {
+    grid-template-columns: 280px minmax(0, 1fr) 280px;
+  }
+  .globe-visual {
+    height: 440px;
+  }
+  .metric-column {
+    grid-template-rows: 30px repeat(5, 86px);
+  }
+  .metric-compact .metric-label {
+    font-size: 11px;
+  }
+  .calendar-layout {
+    grid-template-columns: 1fr 1.45fr 1fr;
+    gap: 50px;
+  }
+  .calendar-viewport {
+    max-width: 500px;
+  }
+  .infrastructure-wrap {
+    grid-template-columns: 220px 1fr;
+  }
+}
+@media (max-width: 1180px) {
+  .app-shell {
+    padding: 0 25px;
+  }
+  .overview-top {
+    grid-template-columns: 220px 1fr;
+    gap: 15px;
+  }
+  .earth-title h1 {
+    font-size: 39px;
+  }
+  .earth-title p {
+    font-size: 10px;
+  }
+  .metric-compact {
+    padding: 0 10px;
+    gap: 7px;
+  }
+  .metric-compact .metric-icon {
+    display: none;
+  }
+  .metric-compact .metric-value {
+    font-size: 20px;
+  }
+  .metric-compact .metric-unit {
+    font-size: 11px;
+  }
+  .earth-layout {
+    grid-template-columns: 220px minmax(0, 1fr) 220px;
+    gap: 5px;
+  }
+  .metric {
+    gap: 9px;
+  }
+  .metric-icon {
+    width: 29px;
+    flex-basis: 29px;
+  }
+  .metric-value {
+    font-size: 23px;
+  }
+  .metric-unit {
+    font-size: 13px;
+  }
+  .column-heading {
+    padding-left: 41px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .geopolitics .column-heading {
+    padding-left: 50px;
+  }
+  .globe-visual {
+    height: 368px;
+  }
+  .metric-column {
+    grid-template-rows: 27px repeat(5, 77px);
+  }
+  .globe-controls {
+    gap: 5px;
+  }
+  .globe-controls .control {
+    font-size: 9px;
+    padding: 6px 10px;
+    gap: 5px;
+  }
+  .globe-hint {
+    font-size: 8px;
+    gap: 4px;
+  }
+  .infrastructure-wrap {
+    grid-template-columns: 160px 1fr;
+    padding-top: 15px;
+  }
+  .infrastructure-metrics .metric-compact {
+    padding: 0 15px;
+  }
+  .calendar-layout {
+    grid-template-columns: 1fr 1.6fr 1fr;
+    gap: 20px;
+  }
+  .week-panel {
+    padding-left: 20px;
+  }
+  .date-summary h3 {
+    font-size: 12px;
+  }
+  .season-list button {
+    font-size: 9px;
+    grid-template-columns: 18px 42px 1fr;
+    gap: 5px;
+  }
+  .section-header h2 {
+    font-size: 27px;
+  }
+  .astronomy-readouts > div {
+    padding: 0 18px;
+    gap: 12px;
+  }
+  .astronomy-readouts > div:first-child {
+    padding-left: 15px;
+  }
+  .astronomy-readouts strong {
+    font-size: 18px;
+  }
+  .astronomy-readouts em {
+    font-size: 12px;
+  }
+  .astronomy-note {
+    font-size: 8px;
+  }
+  .scene-label {
+    font-size: 8px;
+  }
+  .selected-label {
+    font-size: 10px;
+  }
+  .solar-visual {
+    height: 205px;
+  }
+}
+@media (max-width: 950px) {
+  .overview-top {
+    grid-template-columns: 1fr;
+    padding: 25px 0 12px;
+    gap: 22px;
+  }
+  .earth-title {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+  }
+  .earth-title h1 {
+    font-size: 40px;
+  }
+  .economy-metrics .metric:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .metric-compact .metric-icon {
+    display: flex;
+  }
+  .metric-compact .metric-unit {
+    font-size: 10px;
+  }
+  .earth-layout {
+    grid-template-columns: 180px minmax(0, 1fr) 180px;
+  }
+  .metric-column {
+    grid-template-rows: 24px repeat(5, 78px);
+  }
+  .column-heading {
+    font-size: 8px;
+    padding-left: 35px;
+    letter-spacing: 0.6px;
+  }
+  .geopolitics .column-heading {
+    padding-left: 38px;
+  }
+  .geopolitics .metric {
+    padding-left: 3px;
+  }
+  .metric-icon {
+    width: 23px;
+    flex-basis: 23px;
+  }
+  .metric-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+  .metric-value {
+    font-size: 20px;
+  }
+  .metric-unit {
+    font-size: 11px;
+  }
+  .metric-label {
+    font-size: 10px;
+  }
+  .metric-description,
+  .metric-source {
+    font-size: 8px;
+  }
+  .globe-visual {
+    height: 350px;
+  }
+  .globe-controls {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .globe-controls .control {
+    padding: 5px 8px;
+    font-size: 8px;
+    min-height: 28px;
+  }
+  .globe-controls .control svg {
+    width: 11px;
+  }
+  .globe-hint {
+    font-size: 8px;
+    flex-wrap: wrap;
+    line-height: 1.7;
+  }
+  .infrastructure-wrap {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-top: 14px;
+  }
+  .infrastructure-heading {
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .infrastructure-heading br {
+    display: none;
+  }
+  .infrastructure-metrics .metric-compact {
+    padding: 0 10px;
+    gap: 8px;
+  }
+  .infrastructure-metrics .metric:first-child {
+    border: 0;
+    padding-left: 0;
+  }
+  .infrastructure-metrics .metric-compact .metric-icon {
+    display: none;
+  }
+  .metric-compact .metric-source {
+    font-size: 8px;
+  }
+  .calendar-layout {
+    grid-template-columns: 1fr 1.5fr 1fr;
+    gap: 14px;
+  }
+  .calendar-explainer {
+    display: none;
+  }
+  .week-panel {
+    padding-left: 12px;
+  }
+  .week-panel > p {
+    font-size: 9px;
+  }
+  .week-day {
+    font-size: 9px;
+    gap: 4px;
+    grid-template-columns: 28px 1fr auto;
+    padding: 5px;
+  }
+  .today-tag {
+    font-size: 7px;
+    padding: 3px;
+  }
+  .season-list button {
+    font-size: 8px;
+    grid-template-columns: 17px 34px 1fr;
+  }
+  .date-summary > p {
+    font-size: 9px;
+  }
+  .date-summary h3 {
+    font-size: 11px;
+  }
+  .calendar-layout .orbit-display-controls {
+    gap: 2px;
+  }
+  .calendar-layout .orbit-direction-button {
+    font-size: 8px;
+  }
+  .calendar-layout .keyboard-hint {
+    display: none;
+  }
+  .astronomy-readouts {
+    gap: 10px;
+  }
+  .astronomy-readouts > div {
+    padding: 0 10px;
+    gap: 8px;
+  }
+  .astronomy-readouts strong {
+    font-size: 17px;
+  }
+  .astronomy-readouts small {
+    font-size: 8px;
+  }
+  .astronomy-readouts em {
+    font-size: 10px;
+  }
+  .astronomy-readouts svg {
+    width: 20px;
+  }
+  .astronomy-note {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 0 18px;
+  }
+  .app-header {
+    height: 65px;
+    gap: 12px;
+  }
+  .brand {
+    gap: 8px;
+  }
+  .brand img {
+    width: 32px;
+    height: 32px;
+  }
+  .brand span {
+    font-size: 23px;
+    letter-spacing: -0.8px;
+  }
+  .header-right {
+    gap: 6px;
+  }
+  .header-right time {
+    display: none;
+  }
+  .today-button {
+    padding: 6px 13px;
+    min-height: 32px;
+    font-size: 10px;
+  }
+  .overview-top {
+    padding-top: 22px;
+  }
+  .earth-title {
+    display: block;
+  }
+  .earth-title h1 {
+    font-size: 43px;
+  }
+  .earth-title p {
+    font-size: 11px;
+    margin-top: 6px;
+  }
+  .economy-metrics {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 7px;
+  }
+  .metric-compact .metric-icon {
+    display: none;
+  }
+  .metric-compact {
+    padding: 0 9px;
+  }
+  .metric-compact .metric-label {
+    font-size: 8px;
+  }
+  .metric-compact .metric-value {
+    font-size: 17px;
+    letter-spacing: -0.5px;
+  }
+  .metric-compact .metric-unit {
+    display: block;
+    line-height: 1;
+    font-size: 9px;
+    margin: 0;
+  }
+  .metric-compact .metric-source {
+    font-size: 7px;
+    line-height: 1.4;
+    margin-top: 5px;
+  }
+  .earth-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 14px;
+    min-height: 0;
+  }
+  .globe-panel {
+    grid-column: 1/-1;
+    grid-row: 1;
+  }
+  .globe-visual {
+    height: 350px;
+    max-width: 460px;
+    margin: auto;
+  }
+  .globe-hint {
+    font-size: 9px;
+    margin-bottom: 20px;
+    gap: 6px;
+  }
+  .globe-controls .control {
+    font-size: 10px;
+    padding: 7px 15px;
+    min-height: 31px;
+  }
+  .globe-controls .control svg {
+    width: 14px;
+  }
+  .globe-controls {
+    gap: 7px;
+  }
+  .metric-column {
+    grid-template-rows: 27px repeat(5, 80px);
+    padding-top: 5px;
+  }
+  .metric-column.geopolitics {
+    border-left: 1px solid var(--rule);
+    padding-left: 11px;
+  }
+  .column-heading {
+    padding-left: 0 !important;
+    font-size: 8px;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+  }
+  .metric {
+    padding: 10px 2px;
+    gap: 9px;
+  }
+  .metric-icon {
+    width: 23px;
+    flex-basis: 23px;
+  }
+  .metric-icon svg {
+    width: 21px;
+    height: 21px;
+  }
+  .metric-label {
+    font-size: 10px;
+  }
+  .metric-value {
+    font-size: 22px;
+    margin: 3px 0;
+  }
+  .metric-unit {
+    font-size: 11px;
+    margin-left: 4px;
+  }
+  .metric-description,
+  .metric-source {
+    font-size: 8px;
+  }
+  .metric-open {
+    display: none;
+  }
+  .infrastructure-wrap {
+    padding: 21px 0 12px;
+    gap: 14px;
+  }
+  .infrastructure-metrics {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px 0;
+  }
+  .infrastructure-metrics .metric-compact {
+    padding: 0 12px;
+  }
+  .infrastructure-metrics .metric-compact .metric-label {
+    font-size: 9px;
+  }
+  .infrastructure-metrics .metric-compact .metric-value {
+    font-size: 22px;
+  }
+  .infrastructure-metrics .metric-compact .metric-source {
+    font-size: 8px;
+  }
+  .infrastructure-metrics .metric-compact:nth-child(4) {
+    border: 0;
+    padding-left: 0;
+  }
+  .infrastructure-metrics .metric-compact .metric-unit {
+    display: inline;
+    margin-left: 4px;
+    font-size: 11px;
+  }
+  .data-status {
+    font-size: 8px;
+    flex-wrap: wrap;
+    line-height: 1.6;
+    padding: 12px 0 20px;
+    gap: 5px;
+  }
+  .data-status .text-button {
+    font-size: 9px;
+  }
+  .section-header {
+    padding-top: 21px;
+    align-items: flex-start;
+  }
+  .section-header h2 {
+    font-size: 26px;
+    letter-spacing: -0.8px;
+  }
+  .section-header p {
+    font-size: 11px;
+  }
+  .section-header > .control {
+    font-size: 0;
+    padding: 8px;
+    min-height: 31px;
+  }
+  .section-header > .control svg {
+    width: 15px;
+    height: 15px;
+  }
+  .calendar-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 18px;
+    padding: 24px 0;
+  }
+  .calendar-layout > .orbit-stage {
+    grid-row: 1;
+    grid-column: 1/-1;
+    max-width: 520px;
+    margin: auto;
+    width: 100%;
+  }
+  .calendar-layout .orbit-display-controls {
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .calendar-layout .orbit-direction-button {
+    font-size: 10px;
+    min-height: 32px;
+  }
+  .calendar-layout .orbit-zoom-button {
+    display: block;
+    order: 4;
+    margin-top: 10px;
+  }
+  .calendar-layout .keyboard-hint {
+    display: none;
+  }
+  .date-summary {
+    align-self: start;
+  }
+  .date-summary h3 {
+    font-size: 12px;
+  }
+  .date-summary > p {
+    font-size: 9px;
+  }
+  .year-progress {
+    margin: 16px 0 20px;
+    font-size: 9px;
+    gap: 7px;
+  }
+  .season-list button {
+    grid-template-columns: 20px 36px 1fr;
+    gap: 4px;
+    font-size: 8px;
+    line-height: 1.5;
+    padding: 8px 0;
+  }
+  .season-list h4 {
+    font-size: 10px;
+  }
+  .week-panel {
+    padding-left: 14px;
+    align-self: start;
+  }
+  .week-heading h3 {
+    font-size: 21px;
+  }
+  .week-heading .icon-button {
+    width: 23px;
+  }
+  .week-panel > p {
+    font-size: 9px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .week-day {
+    grid-template-columns: 25px 1fr auto;
+    gap: 4px;
+    font-size: 9px;
+    min-height: 30px;
+    padding: 5px 4px;
+  }
+  .calendar-year-nav {
+    font-size: 10px;
+  }
+  .astronomy-controls .control {
+    font-size: 9px;
+    padding: 6px 9px;
+  }
+  .astronomy-controls .icon-button {
+    display: none;
+  }
+  .astronomy-strip .section-header h2 {
+    font-size: 25px;
+    max-width: 240px;
+  }
+  .astronomy-strip .section-header p {
+    font-size: 10px;
+  }
+  .solar-visual {
+    height: 175px;
+    margin: 8px -8px;
+  }
+  .astronomy-readouts {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 0;
+    margin: 6px 0 24px;
+  }
+  .astronomy-readouts > div {
+    padding: 0 12px;
+    gap: 10px;
+  }
+  .astronomy-readouts > div:first-child,
+  .astronomy-readouts > div:nth-child(3) {
+    padding-left: 0;
+    border: 0;
+  }
+  .astronomy-readouts strong {
+    font-size: 18px;
+  }
+  .astronomy-readouts small {
+    font-size: 9px;
+  }
+  .astronomy-readouts em {
+    font-size: 10px;
+  }
+  .astronomy-readouts svg {
+    width: 21px;
+  }
+  .astronomy-note {
+    font-size: 8px;
+    line-height: 1.8;
+    padding-bottom: 18px;
+  }
+  .astronomy-note span {
+    display: block;
+  }
+  footer {
+    font-size: 9px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 18px 0 25px;
+  }
+  .date-exploration {
+    font-size: 9px;
+    line-height: 1.7;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .date-exploration .text-button {
+    font-size: 10px;
+  }
+  .metric-detail {
+    margin: 8px 0 20px;
+    font-size: 11px;
+    line-height: 1.65;
+  }
+  .metric-detail summary {
+    font-size: 10px;
+  }
+  .detail-source {
+    font-size: 9px;
+  }
+  .sources-dialog {
+    padding: 20px;
+    max-height: 94svh;
+  }
+  .dialog-header h2 {
+    font-size: 24px;
+  }
+  .sources-intro,
+  .method-note p {
+    font-size: 11px;
+  }
+  .method-note {
+    padding: 13px;
+  }
+  .source-row summary {
+    font-size: 10px;
+  }
+  .source-row summary > span:last-child {
+    text-align: right;
+  }
+  .source-row summary small {
+    display: block;
+    font-size: 9px;
+  }
+  .calendar-dialog {
+    padding: 14px;
+    width: 98vw;
+  }
+  .calendar-dialog .orbit-zoom-button {
+    display: block;
+    order: 4;
+    margin-top: 12px;
+  }
+  .orbit-viewport.is-zoomed {
+    overflow: auto;
+    max-height: 65svh;
+    border: 1px solid var(--rule);
+  }
+  .orbit-viewport.is-zoomed .calendar-canvas {
+    width: 850px;
+  }
+  .calendar-dialog .keyboard-hint {
+    font-size: 8px;
+  }
+  .dialog-note {
+    font-size: 9px;
+  }
+  .body-label {
+    font-size: 8px;
+  }
+  .selected-label {
+    font-size: 10px;
+  }
+  .metric-detail .icon-button {
+    min-width: 30px;
+    min-height: 30px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Keep the three desktop bands compact while preserving readable data labels. */
+@media (min-width: 721px) {
+  .app-header {
+    height: 64px;
+  }
+  .overview-top {
+    padding-top: 22px;
+    padding-bottom: 9px;
+  }
+  .earth-layout {
+    min-height: 0;
+  }
+  .metric-column {
+    grid-template-rows: 26px repeat(5, minmax(76px, auto));
+    padding-top: 3px;
+  }
+  .metric-column .metric {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .metric-column .metric-label {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+  .metric-column .metric-value {
+    font-size: 23px;
+    line-height: 1.15;
+    margin: 2px 0;
+  }
+  .metric-column .metric-description,
+  .metric-column .metric-source {
+    font-size: 9px;
+    line-height: 1.4;
+  }
+  .globe-visual {
+    height: 350px;
+  }
+  .infrastructure-wrap {
+    padding-top: 14px;
+    padding-bottom: 13px;
+  }
+  .calendar-layout > .orbit-stage {
+    width: min(100%, 385px);
+    justify-self: center;
+  }
+  .calendar-strip > .section-header {
+    position: relative;
+    z-index: 1;
+    margin-bottom: -30px;
+    pointer-events: none;
+  }
+  .calendar-strip > .section-header button {
+    pointer-events: auto;
+  }
+  .calendar-layout {
+    padding-top: 8px;
+    padding-bottom: 20px;
+  }
+  .date-summary,
+  .week-panel {
+    margin-top: 40px;
+  }
+  .calendar-layout .keyboard-hint {
+    display: none;
+  }
+  .solar-visual {
+    height: 164px;
+    margin-top: 3px;
+  }
+  .astronomy-readouts {
+    margin-bottom: 22px;
+  }
+}
+@media (min-width: 1400px) {
+  .globe-visual {
+    height: 380px;
+  }
+  .calendar-layout > .orbit-stage {
+    width: 405px;
+  }
+}
+@media (max-width: 720px) {
+  .economy-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px 0;
+    overflow: visible;
+  }
+  .economy-metrics .metric-compact {
+    padding: 0 11px;
+  }
+  .economy-metrics .metric-compact:nth-child(4) {
+    border-left: 0;
+    padding-left: 0;
+  }
+  .economy-metrics .metric-label {
+    font-size: 10px;
+  }
+  .economy-metrics .metric-value {
+    font-size: 23px;
+  }
+  .economy-metrics .metric-unit {
+    font-size: 10px;
+    display: inline;
+    margin-left: 3px;
+  }
+  .economy-metrics .metric-source {
+    font-size: 8px;
+    margin-top: 2px;
+  }
+  .metric-column {
+    grid-template-rows: 28px repeat(5, minmax(92px, auto));
+  }
+  .metric-column .metric-label {
+    font-size: 11px;
+  }
+  .metric-column .metric-description,
+  .metric-column .metric-source {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+  .metric-column .metric-value {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .metric-column .metric {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .globe-hint {
+    font-size: 9px;
+  }
+  .globe-north {
+    display: none;
+  }
+  .selected-label {
+    max-width: 130px;
+  }
+  .source-row p {
+    font-size: 12px;
+  }
+  .source-row summary {
+    font-size: 12px;
+  }
+  .week-day {
+    font-size: 10px;
+  }
+  .season-list button {
+    font-size: 9px;
+  }
+  .astronomy-note {
+    font-size: 9px;
+  }
+}
+@media (max-width: 720px) {
+  .economy-metrics .metric-unit {
+    display: block;
+    line-height: 1.3;
+    margin: 0;
+  }
+}
+@media (max-width: 375px) {
+  .brand span {
+    font-size: 20px;
+  }
+  .brand img {
+    width: 27px;
+    height: 27px;
+  }
+  .brand {
+    gap: 6px;
+  }
+  .header-right .refresh-button {
+    display: none;
+  }
+  .header-right .today-button {
+    padding: 6px 11px;
+  }
+  .globe-controls .control {
+    padding: 7px 10px;
+    font-size: 9px;
+  }
+  .globe-controls {
+    gap: 5px;
+  }
+  .metric-column .metric-icon {
+    display: none;
+  }
+  .globe-visual {
+    height: 320px;
+  }
+}
