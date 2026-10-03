@@ -29,6 +29,7 @@ export default function CalendarStrip({ selected, today, onSelect }) {
     seasons = useMemo(() => seasonEvents(year), [year]);
   const dialog = useRef(null);
   const [expanded, setExpanded] = useState(false);
+  const [januaryAtBottom, setJanuaryAtBottom] = useState(false);
   const openCalendar = () => {
     setExpanded(true);
     dialog.current.showModal();
@@ -36,7 +37,15 @@ export default function CalendarStrip({ selected, today, onSelect }) {
   const start = startOfWeek(selected),
     day = dayOfYear(selected),
     progress = (day / calendar.dayCount) * 100;
-  const props = { calendar, seasons, selected, today, onSelect };
+  const props = {
+    calendar,
+    seasons,
+    selected,
+    today,
+    onSelect,
+    januaryAtBottom,
+    onToggleJanuaryPosition: () => setJanuaryAtBottom((value) => !value),
+  };
   return (
     <section
       className="calendar-strip strip"

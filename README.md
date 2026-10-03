@@ -3,7 +3,7 @@
 A white, interactive morning dashboard with three horizontal sections:
 
 1. **Earth:** a textured 3D globe with computed daylight. Five economic indicators above it, five geophysical indicators to the left, five geopolitical indicators to the right, and five infrastructure indicators below. Every indicator selects a related 3D annotation and opens its definition and source.
-2. **Calendar:** the seven-track annual calendar adapted directly from the local OrbitWeekCalendar repository. Includes week selection, keyboard navigation, year navigation, leap years, solstices/equinoxes, direction reversal, fading past weeks, and an enlarged view.
+2. **Calendar:** the seven-track annual calendar adapted directly from the local OrbitWeekCalendar repository. Includes week selection, keyboard navigation, year navigation, leap years, solstices/equinoxes, direction reversal, fading past weeks, and an enlarged view. The **Jan 1 at bottom** toggle turns the ring by half a revolution while keeping labels upright and weekdays in reading order; its setting stays synchronized with the enlarged view.
 3. **Astronomy:** an interactive Sun–Earth–Moon model with calculated positions, orbital planes, axial tilts and surface orientations. Play advances one day every half second. Selecting a calendar date updates both 3D models.
 
 ## Run

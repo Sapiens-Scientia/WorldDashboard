@@ -917,7 +917,8 @@ button {
   min-height: 26px;
 }
 .orbit-direction-button:hover,
-.orbit-direction-button[aria-pressed="true"].fade-past-control {
+.orbit-direction-button[aria-pressed="true"].fade-past-control,
+.orbit-direction-button[aria-pressed="true"].january-position-control {
   background: var(--light);
 }
 .orbit-direction-button span {
