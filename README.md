@@ -8,7 +8,7 @@ A white, interactive morning dashboard with three horizontal sections:
 
 ## Run
 
-Requires Node.js 22 or newer.
+Uses Node.js 22, matching the Vercel runtime.
 
 ```sh
 npm install
@@ -32,6 +32,17 @@ npm run refresh-data
 ```
 
 `refresh-data` saves fresh observations to `src/data/snapshot.json`. It preserves saved observations when a source is unavailable. The reference review date is separate from the download date.
+
+## Vercel deployment
+
+The Vercel project connects to `Sapiens-Scientia/WorldDashboard`. Pushes to `main` deploy the production site; other branches get preview deployments through the Vercel GitHub integration.
+
+- `vercel.json` selects Vite, builds with `npm run build`, and serves `dist/`.
+- `api/metrics.js` runs the existing public-data service as a Vercel Node.js function. Its bundle includes the saved snapshot for fallback and allows 30 seconds for upstream requests.
+- The app needs no API keys or environment variables. Vercel project links and local environment files are ignored by Git.
+- Feed caches are local to each function instance; saved observations remain available when an upstream source fails.
+
+This follows [Vercel's Vite function support](https://vercel.com/docs/frameworks/frontend/vite) and [Git integration](https://vercel.com/docs/git).
 
 ## Data and model boundaries
 
@@ -65,4 +76,4 @@ npm run refresh-data
 - Icons: [Lucide](https://lucide.dev/), ISC.
 - See `THIRD_PARTY_NOTICES.md` for distribution notices.
 
-The source repositories and their deployment settings were not changed. This is a local app; publishing is a separate step.
+The original OrbitWeekCalendar repository and its deployment settings were not changed.

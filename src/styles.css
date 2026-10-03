@@ -532,13 +532,21 @@ button {
 }
 .calendar-layout {
   display: grid;
-  grid-template-columns: 1fr 1.55fr 1fr;
-  gap: 35px;
+  grid-template-columns: 180px minmax(0, 1fr) 190px;
+  gap: 20px;
   align-items: center;
-  padding: 14px 0 24px;
+  padding: 24px 0 32px;
+}
+.calendar-layout > .orbit-stage {
+  width: min(100%, 1000px);
+  justify-self: center;
+}
+.date-summary,
+.week-panel {
+  min-width: 0;
 }
 .date-summary h3 {
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.5;
   font-weight: 500;
 }
@@ -584,10 +592,11 @@ button {
 }
 .season-list button {
   display: grid;
-  grid-template-columns: 22px 51px 1fr;
-  gap: 7px;
+  grid-template-columns: 18px 40px 1fr;
+  gap: 5px;
   align-items: center;
-  font-size: 10px;
+  font-size: 9px;
+  line-height: 1.5;
   border: 0;
   border-radius: 4px;
   padding: 7px 0;
@@ -619,7 +628,7 @@ button {
 }
 .week-panel {
   border-left: 1px solid var(--rule);
-  padding: 0 0 0 28px;
+  padding: 0 0 0 14px;
 }
 .week-heading {
   display: flex;
@@ -628,12 +637,15 @@ button {
 }
 .week-heading h3 {
   font-family: var(--serif);
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 400;
   letter-spacing: -0.5px;
 }
 .week-heading > div {
   display: flex;
+}
+.week-heading .icon-button {
+  width: 26px;
 }
 .week-panel > p {
   font-size: 10px;
@@ -647,11 +659,11 @@ button {
 }
 .week-day {
   display: grid;
-  grid-template-columns: 35px 1fr auto;
+  grid-template-columns: 28px 1fr auto;
   align-items: center;
-  gap: 9px;
+  gap: 5px;
   min-height: 31px;
-  padding: 5px 8px;
+  padding: 5px 4px;
   border: 0;
   border-bottom: 1px solid #edf0f1;
   font-size: 10px;
@@ -730,10 +742,10 @@ button {
 }
 .day-number {
   font:
-    9px Inter,
+    500 13px Inter,
     sans-serif;
   text-anchor: middle;
-  fill: #566970;
+  fill: #42575f;
   pointer-events: none;
   font-variant-numeric: tabular-nums;
 }
@@ -749,17 +761,17 @@ button {
 }
 .month-marker text {
   font:
-    500 12px Inter,
+    500 14px Inter,
     sans-serif;
   letter-spacing: 1px;
   fill: #445b64;
 }
 .orbit-week-number {
   font:
-    8.5px Inter,
+    10.5px Inter,
     sans-serif;
   text-anchor: middle;
-  fill: #839393;
+  fill: #687e84;
 }
 .orbit-week-number.is-selected {
   fill: var(--teal);
@@ -942,7 +954,7 @@ button {
 }
 .solar-visual {
   position: relative;
-  height: 226px;
+  height: 260px;
   margin: 0 -10px;
 }
 .body-label {
@@ -1254,13 +1266,6 @@ dialog::backdrop {
   .metric-compact .metric-label {
     font-size: 11px;
   }
-  .calendar-layout {
-    grid-template-columns: 1fr 1.45fr 1fr;
-    gap: 50px;
-  }
-  .calendar-viewport {
-    max-width: 500px;
-  }
   .infrastructure-wrap {
     grid-template-columns: 220px 1fr;
   }
@@ -1343,11 +1348,11 @@ dialog::backdrop {
     padding: 0 15px;
   }
   .calendar-layout {
-    grid-template-columns: 1fr 1.6fr 1fr;
-    gap: 20px;
+    grid-template-columns: 160px minmax(0, 1fr) 180px;
+    gap: 16px;
   }
   .week-panel {
-    padding-left: 20px;
+    padding-left: 12px;
   }
   .date-summary h3 {
     font-size: 12px;
@@ -1381,9 +1386,6 @@ dialog::backdrop {
   }
   .selected-label {
     font-size: 10px;
-  }
-  .solar-visual {
-    height: 205px;
   }
 }
 @media (max-width: 950px) {
@@ -1496,8 +1498,16 @@ dialog::backdrop {
     font-size: 8px;
   }
   .calendar-layout {
-    grid-template-columns: 1fr 1.5fr 1fr;
-    gap: 14px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 28px;
+  }
+  .calendar-layout > .orbit-stage {
+    grid-row: 1;
+    grid-column: 1 / -1;
+  }
+  .calendar-layout > .date-summary,
+  .calendar-layout > .week-panel {
+    align-self: start;
   }
   .calendar-explainer {
     display: none;
@@ -1775,7 +1785,6 @@ dialog::backdrop {
   .calendar-layout > .orbit-stage {
     grid-row: 1;
     grid-column: 1/-1;
-    max-width: 520px;
     margin: auto;
     width: 100%;
   }
@@ -1859,7 +1868,7 @@ dialog::backdrop {
     font-size: 10px;
   }
   .solar-visual {
-    height: 175px;
+    height: 210px;
     margin: 8px -8px;
   }
   .astronomy-readouts {
@@ -1991,7 +2000,7 @@ dialog::backdrop {
     transition: none !important;
   }
 }
-/* Keep the three desktop bands compact while preserving readable data labels. */
+/* Keep the data and astronomy bands compact; the calendar has room to grow. */
 @media (min-width: 721px) {
   .app-header {
     height: 64px;
@@ -2032,33 +2041,11 @@ dialog::backdrop {
     padding-top: 14px;
     padding-bottom: 13px;
   }
-  .calendar-layout > .orbit-stage {
-    width: min(100%, 385px);
-    justify-self: center;
-  }
-  .calendar-strip > .section-header {
-    position: relative;
-    z-index: 1;
-    margin-bottom: -30px;
-    pointer-events: none;
-  }
-  .calendar-strip > .section-header button {
-    pointer-events: auto;
-  }
-  .calendar-layout {
-    padding-top: 8px;
-    padding-bottom: 20px;
-  }
-  .date-summary,
-  .week-panel {
-    margin-top: 40px;
-  }
   .calendar-layout .keyboard-hint {
     display: none;
   }
   .solar-visual {
-    height: 164px;
-    margin-top: 3px;
+    margin-top: 8px;
   }
   .astronomy-readouts {
     margin-bottom: 22px;
@@ -2067,9 +2054,6 @@ dialog::backdrop {
 @media (min-width: 1400px) {
   .globe-visual {
     height: 380px;
-  }
-  .calendar-layout > .orbit-stage {
-    width: 405px;
   }
 }
 @media (max-width: 720px) {
