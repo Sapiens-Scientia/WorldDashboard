@@ -10,7 +10,7 @@ Copyright © 2019–2026 Don Cross. Distributed under the MIT License. The compl
 
 ## Solar System Scope
 
-Sun and cloud textures by Solar System Scope / INOVE, based on NASA imagery, distributed under Creative Commons Attribution 4.0 International. Rendered with material, lighting and color adjustments.
+Sun texture by Solar System Scope / INOVE, based on NASA imagery, distributed under Creative Commons Attribution 4.0 International. Rendered with material, lighting and color adjustments.
 
 Source: https://www.solarsystemscope.com/textures/
 License: https://creativecommons.org/licenses/by/4.0/

@@ -50,25 +50,21 @@ export function loadTexture(path, onLoad, onError) {
 export function earthMaterial(onLoad, onError) {
   const day = loadTexture("/textures/earth-day.jpg", onLoad, onError);
   const night = loadTexture("/textures/earth-night.jpg", onLoad, onError);
-  const clouds = loadTexture("/textures/clouds.jpg", onLoad, onError);
   return new THREE.ShaderMaterial({
     uniforms: {
       dayMap: { value: day },
       nightMap: { value: night },
-      cloudMap: { value: clouds },
       sunDirection: { value: new THREE.Vector3(1, 0, 1).normalize() },
       daylight: { value: 1 },
       cityLights: { value: 0 },
     },
     vertexShader: `varying vec2 vUv; varying vec3 vNormal;
       void main(){vUv=uv;vNormal=normalize(mat3(modelMatrix)*normal);gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.0);}`,
-    fragmentShader: `uniform sampler2D dayMap; uniform sampler2D nightMap; uniform sampler2D cloudMap; uniform vec3 sunDirection; uniform float daylight; uniform float cityLights; varying vec2 vUv; varying vec3 vNormal;
+    fragmentShader: `uniform sampler2D dayMap; uniform sampler2D nightMap; uniform vec3 sunDirection; uniform float daylight; uniform float cityLights; varying vec2 vUv; varying vec3 vNormal;
       void main(){
         float solar=dot(normalize(vNormal),normalize(sunDirection));
         float sun=smoothstep(-0.055,0.09,solar);
         vec3 day=texture2D(dayMap,vUv).rgb;
-        vec4 cloud=texture2D(cloudMap,vUv);
-        day=mix(day,vec3(0.95),pow(cloud.r,0.65)*0.78);
         vec3 night=texture2D(nightMap,vUv).rgb;
         vec3 lit=day*(0.28+0.85*max(0.0,solar));
         vec3 dark=day*0.038+night*0.85;

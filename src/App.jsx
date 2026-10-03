@@ -330,9 +330,10 @@ export default function App() {
         ))}
         <p className="asset-credits">
           Earth imagery: NASA Blue Marble and Earth at Night, distributed with
-          three-globe. Moon: three.js example texture. Sun and cloud textures:
-          Solar System Scope, CC BY 4.0. Interface: Inter, SIL Open Font
-          License. Calendar adapted from your OrbitWeekCalendar repository.
+          three-globe, shown without a cloud overlay. Moon: three.js example
+          texture. Sun texture: Solar System Scope, CC BY 4.0. Interface: Inter,
+          SIL Open Font License. Calendar adapted from your OrbitWeekCalendar
+          repository.
         </p>
       </dialog>
     </div>

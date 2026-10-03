@@ -35,7 +35,7 @@ npm run refresh-data
 
 ## Vercel deployment
 
-[Live dashboard](https://world-dashboard-black.vercel.app/) · [Vercel project](https://vercel.com/sapiens-scientia-vercel-projects/world-dashboard)
+[Live dashboard](https://world-dashboard-overview.vercel.app/) · [Vercel project](https://vercel.com/sapiens-scientia-vercel-projects/world-dashboard)
 
 The Vercel project connects to `Sapiens-Scientia/WorldDashboard`. Pushes to `main` deploy the production site; other branches get preview deployments through the Vercel GitHub integration.
 
@@ -53,7 +53,7 @@ This follows [Vercel's Vite function support](https://vercel.com/docs/frameworks
 - Population is the latest published annual estimate, not an invented ticking count. Inflation uses the World Bank median aggregate. Armed conflicts use the UCDP state-based definition; UN membership counts 193 member states, not every claimed nation.
 - Saved observations remain available when public services fail. A USGS feed older than two hours is shown as unavailable, rather than as a current rolling count. Old cache data retains its original check time.
 - Most globe layers are **illustrative annotations**: they describe a global measure without pretending to have a measured geographic distribution. Each layer explains this in its details. Earthquake epicenters use measured USGS positions. The selected UCDP conflict locations are examples, not a complete map.
-- Astronomy Engine computes planetary and lunar ephemerides in the J2000 ecliptic frame. Earth orientation uses sidereal time plus precession/nutation; Moon orientation uses IAU pole and prime-meridian rotation. Globe sunlight is transformed into Earth-fixed coordinates. The Earth–Sun scene distance is scaled uniformly, the lunar orbit independently, and each body's radius is exaggerated for visibility. Solar texture is illustrative; Earth/cloud imagery is a static composite and does not portray current weather. Moon illumination readout is the geocentric phase fraction.
+- Astronomy Engine computes planetary and lunar ephemerides in the J2000 ecliptic frame. Earth orientation uses sidereal time plus precession/nutation; Moon orientation uses IAU pole and prime-meridian rotation. Globe sunlight is transformed into Earth-fixed coordinates. The Earth–Sun scene distance is scaled uniformly, the lunar orbit independently, and each body's radius is exaggerated for visibility. Solar texture is illustrative; Earth imagery is a static, cloud-free composite and does not portray current weather. Moon illumination readout is the geocentric phase fraction.
 - The calendar uses equal angular spacing for weeks, as in the original repository. It is a diagram of civil time, not a Keplerian orbit. Calendar dates follow the viewer's local time zone; model timestamps are also displayed in UTC. Date exploration does not change the statistical observation periods.
 - The app requires WebGL for 3D. It shows an error if graphics initialization fails; data and the SVG calendar remain available. Scenes pause when offscreen, respect reduced motion for automatic transitions, and release graphics resources on unmount.
 
@@ -73,7 +73,7 @@ This follows [Vercel's Vite function support](https://vercel.com/docs/frameworks
 - Ephemerides: [Astronomy Engine](https://github.com/cosinekitty/astronomy), MIT.
 - Earth Blue Marble and night imagery: NASA, distributed with [three-globe](https://github.com/vasturiano/three-globe/tree/master/example/img).
 - Moon texture: [three.js example texture](https://github.com/mrdoob/three.js/tree/r160/examples/textures/planets), MIT distribution.
-- Sun and cloud textures: [Solar System Scope](https://www.solarsystemscope.com/textures/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), rendered with lighting and material adjustments.
+- Sun texture: [Solar System Scope](https://www.solarsystemscope.com/textures/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), rendered with lighting and material adjustments.
 - Inter: [Rasmus Andersson](https://rsms.me/inter/), SIL Open Font License.
 - Icons: [Lucide](https://lucide.dev/), ISC.
 - See `THIRD_PARTY_NOTICES.md` for distribution notices.
