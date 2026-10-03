@@ -35,6 +35,8 @@ npm run refresh-data
 
 ## Vercel deployment
 
+[Live dashboard](https://world-dashboard-black.vercel.app/) · [Vercel project](https://vercel.com/sapiens-scientia-vercel-projects/world-dashboard)
+
 The Vercel project connects to `Sapiens-Scientia/WorldDashboard`. Pushes to `main` deploy the production site; other branches get preview deployments through the Vercel GitHub integration.
 
 - `vercel.json` selects Vite, builds with `npm run build`, and serves `dist/`.
